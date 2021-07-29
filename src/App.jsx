@@ -1,8 +1,11 @@
+import Previewer from "./components/Previewer";
+import TextEditor from "./components/TextEditor";
 
 function App() {
   return (
-    <div >
-      <h1 className="bg-red-300 p-10"  >lakslak</h1>
+    <div className="flex flex-col min-h-screen justify-center items-center bg-purple-400">
+      <TextEditor />
+      <Previewer />
     </div>
   );
 }

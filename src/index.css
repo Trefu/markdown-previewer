@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer utilities {
+
+    #editor{
+        min-height:200px
+    }
+    #preview{
+        min-height:300px
+
+    }
+
+}
