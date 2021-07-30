@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 const TextEditor = (props) => {
-    const { changeText } = props;
+    const { text, changeText } = props;
     const handleChange = (e) => {
         changeText(e.target.value)
     }
@@ -11,6 +11,7 @@ const TextEditor = (props) => {
                 <h3 className='text-lg text-white pr-5'>Editor</h3>
                 <i className="p-1 bg-purple-200 rounded-md fas fa-marker mr-5"></i></div>
             <textarea onChange={handleChange} id='editor' className="border rounded-md bg-purple-300" name="editor" >
+                {text}
             </textarea>
         </div>
     )
