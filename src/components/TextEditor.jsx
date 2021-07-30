@@ -1,4 +1,3 @@
-import { useState } from "react"
 
 const TextEditor = (props) => {
     const { text, changeText } = props;
