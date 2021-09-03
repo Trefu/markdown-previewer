@@ -5,20 +5,20 @@
 
 Marker Uses:
 
-# = <h1>
-## = <h2>
-### = <h3>
+'#' = <h1>
+'##' = <h2>
+'###' = <h3>
 
-`(One line code)`
+'`(One line code)`'
 
 Codeblock->
-```
+'```
 function otroEjemplo (principio, final) {
   if (principio == '```' && final == '```') {
     return bloqueDeCodigo;
   }
 }
-```
+```'
 
 *** String *** = *Bold*
 _ String_ = _italic_
