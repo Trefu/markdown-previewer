@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer utilities {
-
     #editor {
         min-height: 200px
     }
@@ -148,14 +147,7 @@
    * 2. Correct the odd `em` font sizing in all browsers.
    */
 
-    code,
-    kbd,
-    samp {
-        font-family: monospace, monospace;
-        /* 1 */
-        font-size: 1em;
-        /* 2 */
-    }
+   
 
     /**
    * Add the correct font size in all browsers.

@@ -1,44 +1,43 @@
 export default function example() {
-    return `# Welcome to my React Markdown Previewer!
-
-## This is a sub-heading...
-### And here's some other cool stuff:
-
-Heres some code, \`<div></div>\`, between 2 backticks.
-
+  return `
+ # Bienvenidos a mi previewer!
+ ## Este es un subtítulo <h2>!
+ ### Y aquí hay algunas otras cosas interesantes:
+ Aquí hay un código en una linea ->
+ \`<div>let ejemplo = 'test' </div>\`
+ entre 2 comillas invertidas. \` \`
+ 
 \`\`\`
-// this is multi-line code:
+// este es un bloque de codigo->
 
-function anotherExample(firstLine, lastLine) {
-  if (firstLine == '\`\`\`' && lastLine == '\`\`\`') {
-    return multiLineCode;
+function otroEjemplo (principio, final) {
+  if (principio == '\`\`\`' && final == '\`\`\`') {
+    return bloqueDeCodigo;
   }
 }
 \`\`\`
 
-You can also make text **bold**... whoa!
-Or _italic_.
-Or... wait for it... **_both!_**
-And feel free to go crazy ~~crossing stuff out~~.
+También puede hacer que el texto sea **negrita**
+O _italic_.
+O  **_ambos_**
+Tambien puedes ~~tachar cosas~~.
 
-There's also [links](https://www.freecodecamp.org), and
-> Block Quotes!
+También hay [enlaces](https://www.freecodecamp.org) e incluso las tablas:
 
-And if you want to get really crazy, even tables:
-
-Wild Header | Crazy Header | Another Header?
+Encabezado 1 | Encabezado 2 | ¿Otro encabezado?
 ------------ | ------------- | -------------
-Your content can | be here, and it | can be here....
-And here. | Okay. | I think we get it.
+contenido del 1 | segunda tabla | tercer tabla
+aquí. | contenido | Creo que lo conseguimos.
 
-- And of course there are lists.
-  - Some are bulleted.
-     - With different indentation levels.
-        - That look like this.
+- Y por supuesto que hay listas.
+  - Algunos tienen viñetas.
+     - Con diferentes niveles de sangría.
+        - Eso se parece a esto.
 
+        1. Listas numeradas.
+        1. ¡Utilice solo 1 si lo desea!
+        1. Y por último, pero no menos importante, no olvidemos las imágenes incrustadas:
+        
 
-1. And there are numbered lists too.
-1. Use just 1s if you want!
-1. And last but not least, let's not forget embedded images:
-
-![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)`}
+![freeCodeCamp Logo](https://cdn.freecodecamp.org/testable-projects-fcc/images/fcc_secondary.svg)`
+}
