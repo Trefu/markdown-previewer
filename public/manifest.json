@@ -1,6 +1,6 @@
 {
-  "short_name": "Markdown previewer",
-  "name": "Markdown previewer made for Free code camp",
+  "short_name": "Markdown Studio",
+  "name": "Markdown Studio — Live markdown previewer",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +20,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#0f172a",
+  "background_color": "#f8fafc"
 }

@@ -1,8 +1,8 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders editor and preview elements required by freeCodeCamp', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  expect(document.getElementById('editor')).toBeInTheDocument();
+  expect(document.getElementById('preview')).toBeInTheDocument();
 });
