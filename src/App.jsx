@@ -43,6 +43,31 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const wrapper = document.getElementById("fcc_test_suite_wrapper");
+    if (!wrapper) return;
+
+    const closeFoldout = () => {
+      const sr = wrapper.shadowRoot;
+      if (!sr) return;
+      const foldout = sr.getElementById("fcc_foldout_menu_inner");
+      if (foldout && foldout.style.display !== "none") {
+        foldout.style.display = "none";
+      }
+    };
+
+    closeFoldout();
+    const t1 = setTimeout(closeFoldout, 0);
+    const t2 = setTimeout(closeFoldout, 100);
+    const t3 = setTimeout(closeFoldout, 500);
+
+    return () => {
+      clearTimeout(t1);
+      clearTimeout(t2);
+      clearTimeout(t3);
+    };
+  }, []);
+
   const toggleTheme = () =>
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
