@@ -27,27 +27,20 @@ function App() {
     const wrapper = document.getElementById("fcc_test_suite_wrapper");
     if (!wrapper) return undefined;
 
-    const hide = () => { wrapper.style.display = "none"; };
-    const show = () => { wrapper.style.display = "block"; };
-
-    wrapper.style.display = "none";
-
-    const observer = new MutationObserver(() => {});
-    observer.observe(wrapper, { attributes: true, childList: true, subtree: true });
-
-    const button = document.querySelector(".fcc_test_button");
-    if (!button) return () => observer.disconnect();
-
-    let open = false;
-    const handleToggle = () => {
-      open = !open;
-      if (open) show(); else hide();
+    const positionWrapper = () => {
+      wrapper.style.setProperty("position", "fixed", "important");
+      wrapper.style.setProperty("top", "auto", "important");
+      wrapper.style.setProperty("bottom", "16px", "important");
+      wrapper.style.setProperty("left", "auto", "important");
+      wrapper.style.setProperty("right", "16px", "important");
+      wrapper.style.setProperty("z-index", "99999", "important");
     };
-    button.addEventListener("click", handleToggle);
-    return () => {
-      button.removeEventListener("click", handleToggle);
-      observer.disconnect();
-    };
+    positionWrapper();
+
+    const observer = new MutationObserver(positionWrapper);
+    observer.observe(wrapper, { attributes: true, attributeFilter: ["style"] });
+
+    return () => observer.disconnect();
   }, []);
 
   const toggleTheme = () =>
