@@ -7,12 +7,10 @@ const GITHUB_URL = "https://github.com/trefu";
 const STORAGE_KEY = "mp-theme";
 
 const getInitialTheme = () => {
-  if (typeof window === "undefined") return "light";
+  if (typeof window === "undefined") return "dark";
   const saved = window.localStorage.getItem(STORAGE_KEY);
   if (saved === "dark" || saved === "light") return saved;
-  return window.matchMedia?.("(prefers-color-scheme: dark)").matches
-    ? "dark"
-    : "light";
+  return "dark";
 };
 
 function App() {
@@ -56,12 +54,12 @@ function App() {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
 
   return (
-    <div className="min-h-screen flex flex-col text-slate-800 dark:text-slate-200 font-sans antialiased transition-colors duration-500 ease-out-expo">
-      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-indigo-50 via-white to-emerald-50 dark:from-ink-950 dark:via-ink-900 dark:to-indigo-950 transition-colors duration-500" />
-      <div className="fixed inset-0 -z-10 bg-aurora-light dark:bg-aurora-dark animate-aurora transition-opacity duration-500" />
+    <div className="min-h-screen flex flex-col text-slate-800 dark:text-slate-200 font-sans antialiased transition-colors duration-200 ease-out-expo">
+      <div className="fixed inset-0 -z-10 bg-gradient-to-br from-indigo-50 via-white to-emerald-50 dark:from-ink-950 dark:via-ink-900 dark:to-indigo-950 transition-colors duration-200" />
+      <div className="fixed inset-0 -z-10 bg-aurora-light dark:bg-aurora-dark animate-aurora" />
 
       <header className="sticky top-0 z-10 animate-slide-up">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4 backdrop-blur-md bg-white bg-opacity-60 dark:bg-ink-950 dark:bg-opacity-50 border-b border-slate-200 border-opacity-60 dark:border-slate-800 dark:border-opacity-60 transition-colors duration-500">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4 backdrop-blur-md bg-white bg-opacity-60 dark:bg-ink-950 dark:bg-opacity-50 border-b border-slate-200 border-opacity-60 dark:border-slate-800 dark:border-opacity-60 transition-colors duration-200">
           <div className="flex items-center gap-2.5 min-w-0">
             <span className="h-1.5 w-1.5 rounded-full bg-gradient-to-br from-indigo-500 to-violet-500 shadow-glow animate-pulse-dot" aria-hidden="true" />
             <h1 className="text-[15px] font-semibold tracking-tight text-slate-900 dark:text-white whitespace-nowrap">
@@ -77,7 +75,7 @@ function App() {
             className="relative w-9 h-9 inline-flex items-center justify-center rounded-full border border-slate-200 dark:border-slate-700 text-slate-500 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-300 hover:border-indigo-300 dark:hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-500 dark:hover:bg-opacity-10 transition-all duration-300 ease-out-expo"
           >
             <i
-              className={`fas fa-sun text-sm absolute transition-all duration-500 ease-out-expo ${
+              className={`fas fa-sun text-sm absolute transition-all duration-300 ease-out-expo ${
                 theme === "dark"
                   ? "opacity-0 -rotate-90 scale-50"
                   : "opacity-100 rotate-0 scale-100"
@@ -85,7 +83,7 @@ function App() {
               aria-hidden="true"
             ></i>
             <i
-              className={`fas fa-moon text-sm absolute transition-all duration-500 ease-out-expo ${
+              className={`fas fa-moon text-sm absolute transition-all duration-300 ease-out-expo ${
                 theme === "dark"
                   ? "opacity-100 rotate-0 scale-100"
                   : "opacity-0 rotate-90 scale-50"
@@ -107,7 +105,7 @@ function App() {
         </div>
       </main>
 
-      <footer className="border-t border-slate-200 border-opacity-60 dark:border-slate-800 dark:border-opacity-60 backdrop-blur-sm bg-white bg-opacity-40 dark:bg-ink-950 dark:bg-opacity-40 transition-colors duration-500">
+      <footer className="border-t border-slate-200 border-opacity-60 dark:border-slate-800 dark:border-opacity-60 backdrop-blur-sm bg-white bg-opacity-40 dark:bg-ink-950 dark:bg-opacity-40 transition-colors duration-200">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 h-14 flex items-center justify-center text-xs text-slate-500 dark:text-slate-400">
           <a
             href={GITHUB_URL}
