@@ -28,16 +28,10 @@ html.dark body {
 }
 
 /* FCC bundle renders inside a shadow DOM attached to #fcc_test_suite_wrapper.
-   We position the wrapper at the bottom-right so it doesn't overlap content.
-   The bundle's own UI starts collapsed (only a small #fcc_toggle is visible). */
-#fcc_test_suite_wrapper {
-  position: fixed !important;
-  top: auto !important;
-  bottom: 16px !important;
-  left: auto !important;
-  right: 16px !important;
-  z-index: 99999 !important;
-}
+   The wrapper is repositioned to bottom-right via JS in App.jsx so the
+   small toggle button doesn't overlap the app title. We don't touch the
+   bundle's internal state — the foldout menu is closed by default and
+   opens when the user clicks the toggle. */
 
 /* ---------- Editor ---------- */
 #editor {
